@@ -1,0 +1,33 @@
+-- Carregar a biblioteca Dr Ray UI
+local DrRayUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/DrRayHub/DrRayUI/main/Source.lua"))()
+
+-- Criar a interface principal
+local DarkHub = DrRayUI:CreateWindow("Dark Hub")
+
+-- Primeira aba: Scripts
+local ScriptsTab = DarkHub:CreateTab("Scripts")
+
+-- Slider para ajustar a velocidade
+ScriptsTab:CreateSlider("Velocidade", 16, 100, 16, function(value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+-- Slider para ajustar o pulo
+ScriptsTab:CreateSlider("Pulo", 50, 200, 50, function(value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+end)
+
+-- Botão para ativar Infinity Yield
+ScriptsTab:CreateButton("Ativar Infinity Yield", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
+
+-- Segunda aba: Créditos
+local CreditosTab = DarkHub:CreateTab("Créditos")
+
+-- Adicionar créditos
+CreditosTab:CreateLabel("Discord: mastheit - YouTube: @mastere1909")
+CreditosTab:CreateLabel("Discord: Juankgg10 - YouTube: @juankgg10")
+
+-- Mostrar a interface
+DarkHub:Show()
